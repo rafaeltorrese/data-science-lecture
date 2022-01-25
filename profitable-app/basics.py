@@ -12,4 +12,6 @@ with open(data_path_google, 'r', encoding='utf-8', newline='') as f:
 with open(data_path_apple, 'r', encoding='utf-8', newline='') as f:
     data_apple = [row for row in csv.reader(f)]
 
-print(len(data_google))
+print(data_google[0])
+print()
+print(data_apple[0])
