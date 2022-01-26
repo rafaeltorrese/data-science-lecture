@@ -10,6 +10,11 @@ def remove_parenthesis(row,  column=2):
     row[column] = field
 
 
+def convert_date(date):
+    if date:
+        return int(date)
+
+
 if __name__ == '__main__':
     with open('data-cleaning/artworks.csv', encoding='utf-8', newline='') as f:
         header = next(csv.reader(f))
@@ -42,3 +47,13 @@ if __name__ == '__main__':
         if not nationality:
             nationality = 'Nationality Unknown'
         collection[nation_index] = nationality
+
+    for collection in moma[:5]:
+        birth_date = collection[3]
+        death_date = collection[4]
+        print([birth_date, death_date])
+
+    for collection in moma:
+        birth = convert_date(collection[3])
+        death = convert_date(collection[4])
+        collection[3], collection[4] = birth, death
