@@ -130,3 +130,8 @@ dmypy.json
 
 # pdf files
 *.pdf
+
+#emacs files
+.#*
+\#*\#
+*~
