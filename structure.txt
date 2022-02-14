@@ -1,0 +1,6 @@
+|-02_data-analysis-viz
+  |--- 01_pandas-numpy
+       |--- 04_exploring-data-pandas01
+       |--- 05_exploring-data-pandas02
+  |--- 02_data-viz
+  |--- 03_storytelling
