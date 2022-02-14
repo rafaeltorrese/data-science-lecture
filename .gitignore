@@ -129,7 +129,9 @@ dmypy.json
 .pyre/
 
 # pdf files
-*.pdf
+slides.pdf
+mission*.pdf
+*.ppt*
 
 #emacs files
 .#*
@@ -137,5 +139,3 @@ dmypy.json
 *~
 
 # slides
-slides.*
-!slides.md
