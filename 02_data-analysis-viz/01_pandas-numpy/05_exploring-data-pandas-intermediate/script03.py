@@ -1,7 +1,7 @@
 # %%
 import numpy as np
 import pandas as pd
-
+from pprint import pprint
 # %%
 f500 = pd.read_csv('f500v2.csv')
 print(f500.head())
@@ -123,3 +123,51 @@ print(f500['sector'].unique())
 # %%
 tech_outside_usa = f500[(f500['sector'] == 'Technology')
                         & (f500['country'] != 'USA')].head()
+#%%[markdown]
+# ### Part10
+#%%[markdown]
+# ### Sort values
+# 1. Find the company headquartered in Japan with the largest number of employees.
+#   - Select only the rows that have a country name equal to Japan.
+#   - Use `DataFrame.sort_values()` to sort those rows by the employees column in descending order.
+#   - Use `DataFrame.iloc[]` to select the first row from the sorted dataframe.
+#   - Extract the `company` name from the index label company from the first row. Assign the result to `top_japanese_employer`.
+
+
+#%%
+
+top_japanese_employer = f500[f500['country'] == 'Japan'].sort_values('employees',  ascending=False).iloc[0, 0]
+print(top_japanese_employer)
+
+
+#%%[markdown]
+# ### Aggregation
+#%%
+top_employer_by_country = {}
+countries = f500['country'].unique()
+# print(countries)
+
+for country in countries:
+    selected_row = f500[f500['country'] == country].sort_values('employees', ascending=False).iloc[0]
+    top_employer_by_country[country] = selected_row['company']
+
+# pprint(top_employer_by_country)
+
+#%%[markdown]
+# ### Aggregation challenge
+# 
+# %%
+# pprint(f500.columns)
+# step 1
+f500['roa'] = f500['profits'] / f500['assets']
+# print(f500['profits assets roa'.split()].head())
+
+# step 2
+top_roa_by_sector = {}
+sectors = f500['sector']
+for sector in sectors:
+    selected_row = f500[f500['sector'] == sector].sort_values('roa', ascending=False).iloc[0]
+    top_roa_by_sector[sector] = selected_row['company']
+
+# pprint(top_roa_by_sector)
+#%%
