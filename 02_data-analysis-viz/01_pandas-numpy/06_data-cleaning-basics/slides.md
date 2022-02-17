@@ -46,4 +46,33 @@ The `pandas.read_csv()` [function](https://pandas.pydata.org/pandas-docs/stable/
 
 Below is the output of the `DataFrame.info()` method from the previous screen:
 
+
+```python
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1303 entries, 0 to 1302
+Data columns (total 13 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   Manufacturer              1303 non-null   object
+ 1   Model Name                1303 non-null   object
+ 2   Category                  1303 non-null   object
+ 3   Screen Size               1303 non-null   object
+ 4   Screen                    1303 non-null   object
+ 5   CPU                       1303 non-null   object
+ 6   RAM                       1303 non-null   object
+ 7    Storage                  1303 non-null   object
+ 8   GPU                       1303 non-null   object
+ 9   Operating System          1303 non-null   object
+ 10  Operating System Version  1133 non-null   object
+ 11  Weight                    1303 non-null   object
+ 12  Price (Euros)             1303 non-null   object
+dtypes: object(13)
+memory usage: 132.5+ KB
+```
+
+
+---
+
+We can see that every column is represented as the `object` type, indicating that they are represented by strings, not numbers. Also, one of the columns, `Operating System Version`, has null values.
+
 ---
