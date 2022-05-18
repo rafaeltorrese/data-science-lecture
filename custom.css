@@ -1,0 +1,33 @@
+/*
+Placeholder for custom user CSS
+
+mainly to be overridden in profile/static/custom/custom.css
+
+This will always be an empty file
+*/
+
+.rendered_html pre code {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #2a7bbd;
+    color: #444;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+h1, .h1 {
+    font-size: 33px;
+    font-family: "Trebuchet MS";
+    font-size: 2.5em !important;
+    color: #2a7bbd;
+}
+
+
