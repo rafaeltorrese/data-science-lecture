@@ -4,13 +4,14 @@ theme: gaia
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+title: Data Science
 ---
 
-# **Exploring Data**
+# **Agrupamiento (Clustering)**
 
 ---
 
-# 1. Clustering Overview.
+## 1. Clustering Overview.
 
 Hasta ahora, hemos aprendido acerca de la regresión y la clasificación. Ambos son tipos de [aprendizaje automático supervisado](https://en.wikipedia.org/wiki/Supervised_learning). En el aprendizaje supervisado, puede entrenar un algoritmo para predecir una variable desconocida a partir de variables conocidas.
 
@@ -29,7 +30,7 @@ La agrupación en clústeres es una forma clave de explorar datos desconocidos y
 
 ---
 
-# 2. Los Datos.
+## 2. Los Datos.
 
 En los EE. UU., el Senado vota sobre la legislación propuesta. Para que se promulgue una disposición, el Senado debe aprobar el proyecto de ley. Un proyecto de ley requiere una mayoría de votos para ser aprobado.
 
