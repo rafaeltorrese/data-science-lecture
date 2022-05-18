@@ -3,23 +3,40 @@ marp: true
 theme: gaia
 paginate: true
 backgroundColor: #fff
-backgroundImage: url('https://marp.app/assets/hero-background.svg')
 title: Data Science
+author: Rafael Torres Escobar, Ph.D.
+size: 16:9
 ---
 
 # **Agrupamiento (Clustering)**
 
+Ciencia de Datos e Inteligencia de Negocios
+
 ---
 
-## 1. Clustering Overview.
+## 1. Introducción
 
-Hasta ahora, hemos aprendido acerca de la regresión y la clasificación. Ambos son tipos de [aprendizaje automático supervisado](https://en.wikipedia.org/wiki/Supervised_learning). En el aprendizaje supervisado, puede entrenar un algoritmo para predecir una variable desconocida a partir de variables conocidas.
+- Hasta ahora, hemos aprendido acerca de la regresión y la clasificación. 
 
-Otro tipo importante de aprendizaje automático se llama [aprendizaje no supervisado](https://en.wikipedia.org/wiki/Unsupervised_learning). En el aprendizaje no supervisado, no estamos tratando de predecir nada. En cambio, estamos tratando de encontrar patrones en los datos.
+- Ambos son tipos de [aprendizaje automático supervisado](https://en.wikipedia.org/wiki/Supervised_learning). 
 
-Una de las principales técnicas de aprendizaje no supervisado se denomina agrupación (clustering). El clustering se utiliza para explorar un conjunto de datos y comprender las conexiones entre las distintas filas y columnas. Por ejemplo, podemos agrupar jugadores de la NBA en función de sus estadísticas. Así es como se vería tal agrupación:
+- En el aprendizaje supervisado, puede entrenar un algoritmo para predecir una variable desconocida a partir de variables conocidas.
 
-<img src="figs/yVFklqG.png" alt=cluster width="500" height="400">
+---
+
+- Otro tipo importante de aprendizaje automático se llama [aprendizaje no supervisado](https://en.wikipedia.org/wiki/Unsupervised_learning). 
+- En el aprendizaje no supervisado, no estamos tratando de predecir nada. 
+- En cambio, estamos tratando de encontrar patrones en los datos.
+- Una de las principales técnicas de aprendizaje no supervisado se denomina agrupación (clustering). 
+---
+
+- El clustering se utiliza para explorar un conjunto de datos y comprender las conexiones entre las distintas filas y columnas. 
+
+- Podemos agrupar jugadores de la NBA en función de sus estadísticas. Así es como se vería tal agrupación:
+
+<center><img src="figs/yVFklqG.png" alt=cluster width="400" height="300"></center>
+
+---
 
 
 Los clústeres permitieron descubrir los roles de los jugadores que de otro modo no se habrían notado. [Aquí](https://flowingdata.com/2012/03/21/redefining-nba-basketball-positions/) hay un artículo que describe cómo se crearon los clústeres.
@@ -36,9 +53,15 @@ En los EE. UU., el Senado vota sobre la legislación propuesta. Para que se prom
 
 Los resultados de estas votaciones, conocidas como votaciones nominales, son públicos y están disponibles en algunos lugares, incluido <a href="https://github.com/unitedstates/congress" target="_blank">aquí</a >. Obtenga más información sobre el sistema legislativo de EE. UU. <a href="https://en.wikipedia.org/wiki/Federal_government_of_the_United_States#Legislative_branch" target="_blank">aquí</a>.
 
+---
+
 Los senadores suelen votar de acuerdo con la forma en que vota su partido político, lo que se conoce como votación según las líneas del partido. En EE.UU., los <code>2</code> principales partidos políticos son los <a href="https://en.wikipedia.org/wiki/Democratic_Party" target="_blank">Demócratas</a>, que tienden a ser <a href="https://en.wikipedia.org/wiki/Liberalism" target="_blank">liberales</a>, y los <a href="https://en.wikipedia.org /wiki/Republican_Party" target="_blank">Republicanos</a>, que tienden a ser <a href="https://en.wikipedia.org/wiki/Conservadurism" target="_blank">conservadores</a >. Los senadores también pueden optar por no estar afiliados a un partido y votar como independientes, aunque muy pocos eligen hacerlo.
 
+---
+
 <code>114_congress.csv</code> contiene todos los resultados de las votaciones nominales del 114º Senado. Cada fila representa un solo Senador y cada columna representa un voto. Un <code>0</code> en una celda significa que el Senador votó <code>No</code> por el proyecto de ley, <code>1</code> significa que el Senador votó <code>Sí</code> y <code>0.5</code> significa que el Senador se abstuvo.
+
+--- 
 
 Aquí están las columnas relevantes:
 
@@ -46,6 +69,8 @@ Aquí están las columnas relevantes:
 - <code>name</code> -- El apellido del Senador.
 - <code>party</code> -- El partido político del Senador. Los valores válidos son <code>D</code> para demócrata, <code>R</code> para republicano y <code>I</code> para independiente.
 - Varias columnas numeradas como <code>00001</code>, <code>00004</code>, etc. Cada una de estas columnas representa los resultados de una única votación nominal.
+
+---
 
 
 A continuación se muestran las tres primeras filas de los datos. Como puede ver, el número de cada proyecto de ley se usa como encabezado de columna para sus votos:
@@ -55,7 +80,14 @@ name,party,state,00001,00004,00005,00006,00007,00008,00009,00010,00020,00026,000
 Alexander,R,TN,0,1,1,1,1,0,0,1,1,1,0,0,0,0,0
 Ayotte,R,NH,0,1,1,1,1,0,0,1,0,1,0,1,0,1,0
 ```
-La agrupación de los datos de votación de los senadores es particularmente interesante porque puede exponer patrones que van más allá de la afiliación partidaria. Por ejemplo, algunos republicanos son más liberales que otros. Mirar los datos de votación puede ayudarnos a descubrir a los senadores que están más o menos en la corriente principal de su partido.
+
+---
+
+- La agrupación de los datos de votación de los senadores es particularmente interesante porque puede exponer patrones que van más allá de la afiliación partidaria. 
+
+- Por ejemplo, algunos republicanos son más liberales que otros. Mirar los datos de votación puede ayudarnos a descubrir a los senadores que están más o menos en la corriente principal de su partido.
+
+---
 
 ### Ejercicio
 
